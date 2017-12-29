@@ -1,0 +1,139 @@
+h1{
+	color:white;
+}
+
+h2 {
+	color:#cc0000;
+}
+
+h3 {
+	color: white;
+}
+
+p{
+	display:inline;
+	font-family: cursive;
+	font-size: 150%;
+	line-height: 200%;
+	color: black;
+}
+
+nom-p{
+	font-family: cursive;
+	font-size: 150%;
+	line-height: 200%;
+}
+
+gen-p{
+	font-family: cursive;
+	font-size: 150%;
+	line-height: 200%;
+}
+
+dat-p{
+	font-family: cursive;
+	font-size: 150%;
+	line-height: 200%;
+}
+
+acc-p{
+	font-family: cursive;
+	font-size: 150%;
+	line-height: 200%;
+}
+
+abl-p{
+	font-family: cursive;
+	font-size: 150%;
+	line-height: 200%;
+}
+
+verb-p{
+	font-family: cursive;
+	font-size: 150%;
+	line-height: 200%;
+}
+
+body{
+	background-color: black;
+	padding-right: 2%;
+	padding-bottom: 2%;
+}
+
+/*non specific button style*/
+button{
+	padding: 2%;
+	margin: 2%;
+	align-items: center;
+	display: inherit;
+	font-size: 120%;
+}
+
+/* Style the buttons that are used to open and close the accordion panel */
+button.accordion {
+    background-color: white;
+    color: #cc0000;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: solid;
+	border-width: 3px;
+    transition: 0.4s;
+	margin: 0%;
+	font-size: 120%;
+	font-weight: bolder;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+button.accordion.active, button.accordion:hover {
+    background-color: #cc0000;
+	color: white;
+	font-size: 130%;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+div.panel {
+    padding: 0 18px;
+    background-color: antiquewhite;
+    display: none;
+}
+
+/*everything but the side scroller navigation*/
+.main-content{
+	margin-left: 25%;
+}
+
+/*style for the highlighting buttons*/
+.leaves{
+	background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/V%C3%B2ng_nguy%E1%BB%87t_qu%E1%BA%BF.svg/2000px-V%C3%B2ng_nguy%E1%BB%87t_qu%E1%BA%BF.svg.png");
+	background-position: center;
+	background-size: 70%;
+	background-repeat: no-repeat;
+	font-family: cursive;
+	border-radius: 100%;
+	font-size: 150%;
+	padding:20%;
+	margin: 2%;
+}
+
+/*style for the buttons that are used to highlight*/
+.highlighters{
+	background-color: transparent;
+	border-color: transparent;
+	margin:5%;
+	padding: 2%;
+	vertical-align:middle;
+	color: black;
+}
+
+/* The side navigation menu */
+.sidenav {
+    width: 20%;
+	height: 100%;
+	position: fixed; /* Stay in place */
+	overflow-y: scroll;
+    top: 0;
+    left: 0;
+	background-color: #e1d4b7;
+}

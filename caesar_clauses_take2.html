@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<HTML>
+
+<Head>
+	<title> Caesar! </title>
+	<link rel="stylesheet" href="caesar_clauses_style_take2.css">
+	
+	<!--stylesheet to make circular buttons -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	
+<!-- key for me 
+ablative absolute -> aa -> blue background
+prep phrases -> prep -> gray background
+double dative -> dd -> yellow background
+
+purpose clause -> purp -> purple letters
+causal clause -> cau -> orange letters
+concessive -> conc -> green letters
+conditional -> cond -> blue letters
+relative clause -> rc -> red letters
+
+cum causal -> cumca -> orange dots underline
+cum circumstantial -> cumci -> blue dots underline
+cum concessive -> cumco -> green dots underline
+cum temporal -> cumt -> purple dots underline
+
+indirect statement -> is -> solid darkgreen underline
+indirect command -> ic -> solid green underline
+indirect question -> iq -> solid lightgreen underline-->
+
+<!--function to highlight and unhighlight things-->	
+<script>
+	/*ablative absolute -> aa -> blue background*/
+	function aaFunction() {
+   		var x = document.getElementById("5");
+		var y = x.getElementsByClassName("aa");
+   		var i;
+   		for (i = 0; i < y.length; i++) {
+       		if (y[i].style.backgroundColor == "lightblue") {
+				y[i].style.backgroundColor = "transparent";
+			} else {
+				y[i].style.backgroundColor = "lightblue";
+				}
+			}			
+		}
+	
+	/*prep phrases -> prep -> gray background*/
+	function prepFunction() {
+   		var x = document.getElementById("5");
+		var y = x.getElementsByClassName("prep");
+   		var i;
+   		for (i = 0; i < y.length; i++) {
+       		if (y[i].style.backgroundColor == "lightgray") {
+				y[i].style.backgroundColor = "transparent";
+			} else {
+				y[i].style.backgroundColor = "lightgray";
+				}
+			}			
+		}
+	
+	/*double dative -> dd -> yellow background*/
+	function ddFunction() {
+   		var x = document.getElementById("5");
+		var y = x.getElementsByClassName("dd");
+   		var i;
+   		for (i = 0; i < y.length; i++) {
+       		if (y[i].style.backgroundColor == "yellow") {
+				y[i].style.backgroundColor = "transparent";
+			} else {
+				y[i].style.backgroundColor = "yellow";
+				}
+			}			
+		}
+		
+	/*purpose clause -> purp -> purple letters*/
+	function purpFunction() {
+		var x = document.getElementById("5");
+		var y = x.getElementsByClassName("purp");
+   		var i;
+   		for (i = 0; i < y.length; i++) {
+       		if (y[i].style.color == "purple") {
+				y[i].style.color = "black";
+			} else {
+				y[i].style.color = "purple";
+				}
+			}			
+		}
+	
+	/*causal clause -> cau -> orange letters*/
+	function cauFunction() {
+		var x = document.getElementById("5");
+		var y = x.getElementsByClassName("cau");
+   		var i;
+   		for (i = 0; i < y.length; i++) {
+       		if (y[i].style.color == "orange") {
+				y[i].style.color = "black";
+			} else {
+				y[i].style.color = "orange";
+				}
+			}			
+		}
+	
+	/*concessive -> conc -> green letters*/
+	function concFunction() {
+		var x = document.getElementById("5");
+		var y = x.getElementsByClassName("conc");
+   		var i;
+   		for (i = 0; i < y.length; i++) {
+       		if (y[i].style.color == "green") {
+				y[i].style.color = "black";
+			} else {
+				y[i].style.color = "green";
+				}
+			}			
+		}
+	
+	/*conditional -> cond -> blue letters*/
+	function condFunction() {
+		var x = document.getElementById("5");
+		var y = x.getElementsByClassName("cond");
+   		var i;
+   		for (i = 0; i < y.length; i++) {
+       		if (y[i].style.color == "blue") {
+				y[i].style.color = "black";
+			} else {
+				y[i].style.color = "blue";
+				}
+			}			
+		}
+	
+	/*relative clause -> rc -> red letters*/
+	function rcFunction() {
+		var x = document.getElementById("5");
+		var y = x.getElementsByClassName("rc");
+   		var i;
+   		for (i = 0; i < y.length; i++) {
+       		if (y[i].style.color == "red") {
+				y[i].style.color = "black";
+			} else {
+				y[i].style.color = "red";
+				}
+			}			
+		}
+	
+	/*cum causal -> cumca -> orange dots underline*/
+	function cumcaFunction() {
+		var x = document.getElementById("5");
+		var y = x.getElementsByClassName("cumca");
+   		var i;
+   		for (i = 0; i < y.length; i++) {
+       		if (y[i].style.textDecoration == "underline") {
+				y[i].style.textDecoration = "none";
+			} else {
+				y[i].style.textDecoration = "underline";
+				y[i].style.textDecorationStyle = "dotted";
+				y[i].style.textDecorationColor = "orange";
+				}
+			}			
+		}
+	
+	/*cum circumstantial -> cumci -> blue dots underline*/
+	function cumciFunction() {
+		var x = document.getElementById("5");
+		var y = x.getElementsByClassName("cumci");
+   		var i;
+   		for (i = 0; i < y.length; i++) {
+       		if (y[i].style.textDecoration == "underline") {
+				y[i].style.textDecoration = "none";
+			} else {
+				y[i].style.textDecoration = "underline";
+				y[i].style.textDecorationStyle = "dotted";
+				y[i].style.textDecorationColor = "blue";
+				}
+			}			
+		}
+	
+	/*cum concessive -> cumco -> green dots underline*/
+	function cumcoFunction() {
+		var x = document.getElementById("5");
+		var y = x.getElementsByClassName("cumco");
+   		var i;
+   		for (i = 0; i < y.length; i++) {
+       		if (y[i].style.textDecoration == "underline") {
+				y[i].style.textDecoration = "none";
+			} else {
+				y[i].style.textDecoration = "underline";
+				y[i].style.textDecorationStyle = "dotted";
+				y[i].style.textDecorationColor = "lightgreen";
+				}
+			}			
+		}
+	
+	/*cum temporal -> cumt -> purple dots underline*/
+	function cumtFunction() {
+		var x = document.getElementById("5");
+		var y = x.getElementsByClassName("cumt");
+   		var i;
+   		for (i = 0; i < y.length; i++) {
+       		if (y[i].style.textDecoration == "underline") {
+				y[i].style.textDecoration = "none";
+			} else {
+				y[i].style.textDecoration = "underline";
+				y[i].style.textDecorationStyle = "dotted";
+				y[i].style.textDecorationColor = "purple";
+				}
+			}			
+		}
+	
+	/*indirect statement -> is -> solid darkgreen underline*/
+	function isFunction() {
+		var x = document.getElementById("5");
+		var y = x.getElementsByClassName("is");
+   		var i;
+   		for (i = 0; i < y.length; i++) {
+       		if (y[i].style.textDecoration == "underline") {
+				y[i].style.textDecoration = "none";
+			} else {
+				y[i].style.textDecoration = "underline";
+				y[i].style.textDecorationStyle = "double";
+				y[i].style.textDecorationColor = "#009933";
+				}
+			}			
+		}
+	
+	/*indirect command -> ic -> solid green underline*/
+	function icFunction() {
+		var x = document.getElementById("5");
+		var y = x.getElementsByClassName("ic");
+   		var i;
+   		for (i = 0; i < y.length; i++) {
+       		if (y[i].style.textDecoration == "underline") {
+				y[i].style.textDecoration = "none";
+			} else {
+				y[i].style.textDecoration = "underline";
+				y[i].style.textDecorationStyle = "double";
+				y[i].style.textDecorationColor = "#00cc00";
+				}
+			}			
+		}
+	
+	/*indirect question -> iq -> solid lightgreen underline-*/
+	function iqFunction() {
+		var x = document.getElementById("5");
+		var y = x.getElementsByClassName("iq");
+   		var i;
+   		for (i = 0; i < y.length; i++) {
+       		if (y[i].style.textDecoration == "underline") {
+				y[i].style.textDecoration = "none";
+			} else {
+				y[i].style.textDecoration = "underline";
+				y[i].style.textDecorationStyle = "double";
+				y[i].style.textDecorationColor = "#66ff66";
+				}
+			}			
+		}
+	</script>
+</Head>
+
+<Body>	
+<!--the side navigation so that the highlight buttons are always there -->
+<div class="sidenav"><center>
+	<h3> Highlight! </h3>
+	<!--ablative absolute button-->
+	<div>
+	<button class= "highlighters" onclick="aaFunction()">ablative absolute</button>
+	</div>
+	<!--prep phrase button-->
+	<div>
+	<button class= "highlighters" onclick="prepFunction()">prep phrases</button>
+	</div>
+	<!--double dative-->
+	<div>
+	<button class= "highlighters" type="button" onclick="ddFunction()">double dative</button>
+	</div>
+	<!--purpose clause-->
+	<div>
+	<button class= "highlighters" type="button" onclick="purpFunction()">purpose clause</button>
+	</div>
+	<!--causal clause-->
+	<div>
+	<button class= "highlighters" type="button" onclick="cauFunction()">causal clause</button>
+	</div>
+	<!--concessive clause-->
+	<div>
+	<button class= "highlighters" type="button" onclick="concFunction()">concessive clause</button>
+	</div>
+	<!--conditional clause-->
+	<div>
+	<button class= "highlighters" type="button" onclick="condFunction()">conditional clause</button>
+	</div>
+	<!--relative clause-->
+	<div>
+	<button class= "highlighters" type="button" onclick="rcFunction()">relative clause</button>
+	</div>
+	<!--cum causal-->
+	<div>
+	<button class="highlighters" type="button" onclick="cumcaFunction()">cum causal</button>
+	</div>
+	<!--cum circumstantial-->
+	<div>
+	<button class="highlighters" type="button" onclick="cumciFunction()">cum circumstantial</button>
+	</div>
+	<!--cum concessive-->
+	<div>
+	<button class="highlighters" type="button" onclick="cumcoFunction()">cum concessive</button>
+	</div>
+	<!--cum temporal-->
+	<div>
+	<button class="highlighters" type="button" onclick="cumtFunction()">cum temporal</button>
+	</div>
+	<!--indirect statement-->
+	<div>
+	<button class="highlighters" type="button" onclick="isFunction()">indirect statement</button>
+	</div>
+	<!--indirect command-->
+	<div>
+	<button class="highlighters" type="button" onlick="icFunction()">indirect command</button>
+	</div>
+	<!--indirect question-->
+	<div>
+	<button class= "highlighters" type="button" onclick="iqFunction()">indirect question</button>
+	</div>
+</center></div>
+	
+<!--the actual main content of the website -->
+<!-- key for me 
+ablative absolute -> aa -> blue background
+prep phrases -> prep -> gray background
+double dative -> dd -> yellow background
+
+purpose clause -> purp -> purple letters
+causal clause -> cau -> orange letters
+concessive -> conc -> green letters
+conditional -> cond -> blue letters
+relative clause -> rc -> red letters
+
+cum causal -> cumca -> orange dots underline
+cum circumstantial -> cumci -> dots underline
+cum concessive -> cumco -> dots underline
+cum temporal -> cumt -> dots underline
+
+indirect statement -> is -> solid darkgreen underline
+indirect command -> ic -> solid green underline
+indirect question -> iq -> solid lightgreen underline-->
+<div class="main-content" id="5">
+	<div><center>
+	<h1> Caesar Something </h1>
+	<h2> The Gallic Wars </h2>
+	<h3> Book 5 </h3>
+	</center></div>
+		
+	<button class="accordion"> Caesar 5.31 </button>
+	<div class="panel">
+		<p class="aa">Consurgitur</p>
+		<p class="prep">ex</p>
+		<p class="dd">consilio;</p>
+		<p class="purp">comprehendunt</p>
+		<p class="cau">utrumque</p>
+		<p class="conc">et</p>
+		<p class="cond">orant,</p>
+		<p class="rc">ne</p>
+		<p class="cumca">sua</p>
+		<p class="cumci">dissensione</p>
+		<p class="cumco">et</p>
+		<p class="cumt">pertinacia</p>
+		<p class="is">rem</p>
+		<p class="ic">in</p>
+		<p class="iq">summum</p>
+		<p class="">periculum</p>
+		<p class="">deducat:</p>
+		<p class="">facilem</p>
+		<p class="">esse</p>
+		<p class="">rem,</p>
+		<p class="">seu</p>
+		<p class="">maneant,</p>
+		<p class="">seu</p>
+		<p class="">proficiscantur,</p>
+		<p class="">si</p>
+		<p class="">modo</p>
+		<p class="">unum</p>
+		<p class="">omnes</p>
+		<p class="">sentiant</p>
+		<p class="">ac</p>
+		<p class="">probent;</p>
+		<p class="">contra</p>
+		<p class="">in</p>
+		<p class="">dissensione</p>
+		<p class="">nullam</p>
+		<p class="">se</p>
+		<p class="">salutem</p>
+		<p class="">perspicere.</p>
+		<p class="">Res</p>
+		<p class="">disputatione</p>
+		<p class="">ad</p>
+		<p class="">mediam</p>
+		<p class="">noctem</p>
+		<p class="">perducitur.</p>
+		<p class="">Tandem</p>
+		<p class="">dat</p>
+		<p class="">Cotta</p>
+		<p class="">permotus</p>
+		<p class="">manus:</p>
+		<p class="">superat</p>
+		<p class="">sententia</p>
+		<p class="">Sabini.</p>
+		<p class="">Pronuntiatur</p>
+		<p class="">prima</p>
+		<p class="">luce</p>
+		<p class="">ituros.</p>
+		<p class="">Consumitur</p>
+		<p class="">vigiliis</p>
+		<p class="">reliqua</p>
+		<p class="">pars</p>
+		<p class="">noctis,</p>
+		<p class="">cum</p>
+		<p class="">sua</p>
+		<p class="">quisque</p>
+		<p class="">miles</p>
+		<p class="">circumspiceret,</p>
+		<p class="">quid</p>
+		<p class="">secum</p>
+		<p class="">portare</p>
+		<p class="">posset,</p>
+		<p class="">quid</p>
+		<p class="">ex</p>
+		<p class="">instrumento</p>
+		<p class="">hibernorum</p>
+		<p class="">relinquere</p>
+		<p class="">cogeretur.</p>
+		<p class="">Omnia</p>
+		<p class="">excogitantur,</p>
+		<p class="">quare</p>
+		<p class="">nec</p>
+		<p class="">sine</p>
+		<p class="">periculo</p>
+		<p class="">maneatur,</p>
+		<p class="">et</p>
+		<p class="">languore</p>
+		<p class="">militum</p>
+		<p class="">et</p>
+		<p class="">vigiliis</p>
+		<p class="">periculum</p>
+		<p class="">augeatur.</p>
+		<p class="">Prima</p>
+		<p class="">luce</p>
+		<p class="">sic</p>
+		<p class="">ex</p>
+		<p class="">castris</p>
+		<p class="">proficiscuntur,</p>
+		<p class="">ut</p>
+		<p class="">quibus</p>
+		<p class="">esset</p>
+		<p class="">persuasum</p>
+		<p class="">non</p>
+		<p class="">ab</p>
+		<p class="">hoste,</p>
+		<p class="">sed</p>
+		<p class="">ab</p>
+		<p class="">homine</p>
+		<p class="">amicissimo</p>
+		<p class="">Ambiorige</p>
+		<p class="">consilium</p>
+		<p class="">datum,</p>
+		<p class="">longissimo</p>
+		<p class="">agmine</p>
+		<p class="">maximisque</p>
+		<p class="">impedimentis.</p>
+	</div>
+
+	<button class="accordion">Caesar 1.2</button>
+		<div class="panel">
+			<p>Apud</p>
+			
+		</div>
+
+	<button class="accordion">Caesar 1.3</button>
+		<div class="panel">
+			<abl-p>His</abl-p>
+			
+		</div>
+
+	<button class="accordion">Caesar 1.4</button>
+		<div class="panel">
+			<nom-p>Ea</nom-p>
+			
+		</div> 
+	
+	<button class="accordion">Caesar 1.5</button>
+		<div class="panel">
+			<p>Post</p>
+					
+		</div>
+	
+	<button class="accordion">Caesar 1.6</button>
+		<div class="panel">
+			<verb-p>Erant</verb-p>
+			
+		</div>
+	
+	<button class="accordion">Caesar 1.7</button>
+		<div class="panel">
+			<dat-p>Caesari</dat-p>
+			
+		</div>
+</div>
+	
+<!--Javascript for the accordian buttons -->
+<script>
+	var acc = document.getElementsByClassName("accordion");
+	var i;
+
+	for (i = 0; i < acc.length; i++) {
+		acc[i].onclick = function(){
+			/* Toggle between adding and removing the "active" class, to highlight the button that controls the panel */
+			this.classList.toggle("active");
+
+			/* Toggle between hiding and showing the active panel */
+			var panel = this.nextElementSibling;
+			if (panel.style.display === "block") {
+				panel.style.display ="none";
+			} else {
+				panel.style.display = "block";
+				}
+			}
+		}
+</script>
+	
+</Body>
+
+</HTML>

@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<HTML>
+
+<Head>
+	<title> Caesar! </title>
+	<link rel="stylesheet" href="caesar_style.css">
+	
+	<!--stylesheet to make circular buttons -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<!-- makes a new type of html tag copying the properties of p -->
+	<script>
+		/*creates a paragraph for nominatives so that all nominatives can be changed at once*/
+		var NominativeP = document.registerElement('nom-p', {
+			prototype: Object.create(HTMLElement.prototype), extends: 'p'
+		});
+		
+		/*creates a paragraph for genitives so that all genitives can be changed at once*/
+		var GenitiveP = document.registerElement('gen-p', {
+			prototype: Object.create(HTMLButtonElement.prototype), extends: 'p'
+		});
+		
+		/*creates a paragraph for datives so that all datives can be changed at once*/
+		var DativeP = document.registerElement('dat-p', {
+			prototype: Object.create(HTMLButtonElement.prototype), extends: 'p'
+		});
+		
+		/*creates a paragraph for accusatives so that all accusatives can be changed at once*/
+		var AccusativeP = document.registerElement('acc-p', {
+			prototype: Object.create(HTMLButtonElement.prototype), extends: 'p'
+		});
+		
+		/*creates a paragraph for ablatives so that all ablatives can be changed at once*/
+		var AblativeP = document.registerElement('abl-p', {
+			prototype: Object.create(HTMLButtonElement.prototype), extends: 'p'
+		});
+		
+		/*creates a paragraph for verbs so that all verbs can be changed at once*/
+		var VerbP = document.registerElement('verb-p', {
+			prototype: Object.create(HTMLButtonElement.prototype), extends: 'p'
+		});
+	</script>
+
+<!--function to highlight and unhighlight things-->	
+	<script>
+		/*(un)highlights nominatives*/
+		function nomFunction() {
+    		var x = document.getElementById("1.1");
+			var y = x.getElementsByTagName("nom-p");
+    		var i;
+    		for (i = 0; i < y.length; i++) {
+        		if (y[i].style.backgroundColor == "lightpink") {
+					y[i].style.backgroundColor = "transparent";
+					} else {
+						y[i].style.backgroundColor = "lightpink";
+					}
+				}			
+			}
+		
+		/*highlights genitives*/
+		function genFunction() {
+			var x = document.getElementById("1.1");
+			var y = x.getElementsByTagName("gen-p");
+    		var i;
+    		for (i = 0; i < y.length; i++) {
+        		if (y[i].style.backgroundColor == "orange") {
+					y[i].style.backgroundColor = "transparent";
+					} else {
+						y[i].style.backgroundColor = "orange";
+					}
+				}			
+			}
+		
+		/*highlights datives*/
+		function datFunction() {
+			var x = document.getElementById("1.1");
+			var y = x.getElementsByTagName("dat-p");
+    		var i;
+    		for (i = 0; i < y.length; i++) {
+        		if (y[i].style.backgroundColor == "yellow") {
+					y[i].style.backgroundColor = "transparent";
+					} else {
+						y[i].style.backgroundColor = "yellow";
+					}
+				}			
+			}
+		
+		/*highlights accusative*/
+		function accFunction() {
+			var x = document.getElementById("1.1");
+			var y = x.getElementsByTagName("acc-p");
+    		var i;
+    		for (i = 0; i < y.length; i++) {
+        		if (y[i].style.backgroundColor == "lightgreen") {
+					y[i].style.backgroundColor = "transparent";
+					} else {
+						y[i].style.backgroundColor = "lightgreen";
+					}
+				}			
+			}
+		
+		/*highlights ablatives*/
+		function ablFunction() {
+			var x = document.getElementById("1.1");
+			var y = x.getElementsByTagName("abl-p");
+    		var i;
+    		for (i = 0; i < y.length; i++) {
+        		if (y[i].style.backgroundColor == "lightblue") {
+					y[i].style.backgroundColor = "transparent";
+					} else {
+						y[i].style.backgroundColor = "lightblue";
+					}
+				}			
+			}
+		
+		/*highlights verbs*/
+		function verbFunction() {
+			var x = document.getElementById("1.1");
+			var y = x.getElementsByTagName("verb-p");
+    		var i;
+    		for (i = 0; i < y.length; i++) {
+        		if (y[i].style.backgroundColor == "plum") {
+					y[i].style.backgroundColor = "transparent";
+					} else {
+						y[i].style.backgroundColor = "plum";
+					}
+				}			
+			}
+	</script>
+</Head>
+
+<Body>	
+<!--the side navigation so that the highlight buttons are always there -->
+<div class="sidenav"><center>
+	<h3> Highlight! </h3>
+	
+	<div class="leaves">
+	<button class= "highlighters" onclick="nomFunction()">nom</button>
+	</div>
+	
+	<div class="leaves">
+	<button class= "highlighters" type="button" onclick="genFunction()">gen</button>
+	</div>
+	
+	<div class="leaves">
+	<button class= "highlighters" type="button" onclick="datFunction()">dat</button>
+	</div>
+		
+	<div class="leaves">
+	<button class= "highlighters" type="button" onclick="accFunction()">acc</button>
+	</div>
+	
+	<div class="leaves">
+	<button class= "highlighters" type="button" onclick="ablFunction()">abl</button>
+	</div>
+		
+	<div class="leaves">
+	<button class= "highlighters" type="button" onclick="verbFunction()">verb</button>
+	</div>
+</center></div>
+	
+<!--the actual main content of the website -->
+<div class="main-content" id="1.1">
+	<div><center>
+	<h1> Caesar Something </h1>
+	<h2> The Gallic Wars </h2>
+	<h3> Book 1 </h3>
+	</center></div>
+		
+	<button class="accordion"> Caesar 1.1 </button>
+	<div class="panel">
+		<div>
+		<nom-p>Gallia</nom-p>
+		<verb-p>est</verb-p>
+		<nom-p>omnis</nom-p>
+		<verb-p>divisa</verb-p>
+		<p>in</p>
+		<acc-p>partes</acc-p>
+		<acc-p>tres,</acc-p>
+		<gen-p>quarum</gen-p>
+		<acc-p>unam</acc-p>
+		<verb-p>incolunt</verb-p>
+		<nom-p>Belgae,</nom-p>
+		<acc-p>aliam</acc-p>
+		<nom-p>Aquitani,</nom-p>
+		<acc-p>tertiam</acc-p>
+		<p>qui</p>
+		<gen-p>ipsorum</gen-p>
+		<abl-p>lingua</abl-p>
+		<nom-p>Celtae,</nom-p>
+		<abl-p>nostra</abl-p>
+		<nom-p>Galli</nom-p>
+		<verb-p>appellantur.</verb-p>
+		<nom-p>Hi</nom-p>
+		<nom-p>omnes</nom-p>
+		<abl-p>lingua,</abl-p>
+		<abl-p>institutis,</abl-p>
+		<abl-p>legibus</abl-p>
+		<p>inter</p>
+		<acc-p>se</acc-p>
+		<verb-p>differunt.</verb-p>
+		<acc-p>Gallos</acc-p>
+		<p>ab</p>
+		<abl-p>Aquitanis</abl-p>
+		<nom-p>Garumna</nom-p>
+		<nom-p>flumen,</nom-p>
+		<p>a</p>
+		<abl-p>Belgis</abl-p>
+		<nom-p>Matrona</nom-p>
+		<p>et</p>
+		<nom-p>Sequana</nom-p>
+		<verb-p>dividit.</verb-p>
+		<gen-p>Horum</gen-p>
+		<gen-p>omnium</gen-p>
+		<nom-p>fortissimi</nom-p>
+		<verb-p>sunt</verb-p>
+		<nom-p>Belgae,</nom-p>
+		<p>propterea</p>
+		<p>quod</p>
+		<p>a</p>
+		<abl-p>cultu</abl-p>
+		<p>atque</p>
+		<abl-p>humanitate</abl-p>
+		<gen-p>Provinciae</gen-p>
+		<p>longissime</p>
+		<verb-p>absunt,</verb-p>
+		<p>minimeque</p>
+		<p>ad</p>
+		<acc-p>eos</acc-p>
+		<nom-p>mercatores</nom-p>
+		<p>saepe</p>
+		<verb-p>commeant</verb-p>
+		<p>atque</p>
+		<acc-p>ea</acc-p>
+		<p>quae</p>
+		<p>ad</p>
+		<acc-p>effeminandos</acc-p>
+		<acc-p>animos</acc-p>
+		<verb-p>pertinent</verb-p>
+		<verb-p>important,</verb-p>
+		<p>Proximique</p>
+		<verb-p>sunt</verb-p>
+		<dat-p>Germanis,</dat-p>
+		<p>qui</p>
+		<p>trans</p>
+		<acc-p>Rhenum</acc-p>
+		<verb-p>incolunt,</verb-p>
+		<abl-p>quibuscum</abl-p>
+		<p>continenter</p>
+		<acc-p>bellum</acc-p>
+		<verb-p>gerunt.</verb-p>
+		<p>Qua</p>
+		<p>de</p>
+		<p>causa</p>
+		<nom-p>Helvetii</nom-p>
+		<p>quoque</p>
+		<acc-p>reliquos</acc-p>
+		<acc-p>Gallos</acc-p>
+		<abl-p>virtute</abl-p>
+		<verb-p>praecedunt,</verb-p>
+		<p>quod</p>
+		<p>fere</p>
+		<p>cotidianis</p>
+		<abl-p>proeliis</abl-p>
+		<p>cum</p>
+		<abl-p>Germanis</abl-p>
+		<verb-p>contendunt,</verb-p>
+		<p>cum</p>
+		<p>aut</p>
+		<gen-p>suis</gen-p>
+		<abl-p>finibus</abl-p>
+		<acc-p>eos</acc-p>
+		<verb-p>prohibent</verb-p>
+		<p>aut</p>
+		<nom-p>ipsi</nom-p>
+		<p>in</p>
+		<gen-p>eorum</gen-p>
+		<abl-p>finibus</abl-p>
+		<acc-p>bellum</acc-p>
+		<verb-p>gerunt.</verb-p>
+		<gen-p>Eorum</gen-p>
+		<nom-p>una</nom-p>
+		<nom-p>pars,</nom-p>
+		<p>quam</p>
+		<acc-p>Gallos</acc-p>
+		<verb-p>obtinere</verb-p>
+		<verb-p>dictum</verb-p>
+		<verb-p>est,</verb-p>
+		<p>initium</p>
+		<verb-p>capit</verb-p>
+		<p>a</p>
+		<abl-p>flumine</abl-p>
+		<abl-p>Rhodano,</abl-p>
+		<verb-p>continetur</verb-p>
+		<abl-p>Garumna</abl-p>
+		<abl-p>flumine,</abl-p>
+		<abl-p>Oceano,</abl-p>
+		<abl-p>finibus</abl-p>
+		<gen-p>Belgarum,</gen-p>
+		<verb-p>attingit</verb-p>
+		<p>etiam</p>
+		<p>ab</p>
+		<abl-p>Sequanis</abl-p>
+		<p>et</p>
+		<abl-p>Helvetiis</abl-p>
+		<acc-p>flumen</acc-p>
+		<acc-p>Rhenum,</acc-p>
+		<verb-p>vergit</verb-p>
+		<p>ad</p>
+		<acc-p>septentriones.</acc-p>
+		<p>Belgae</p>
+		<p>ab</p>
+		<abl-p>extremis</abl-p>
+		<gen-p>Galliae</gen-p>
+		<abl-p>finibus</abl-p>
+		<verb-p>oriuntur,</verb-p>
+		<verb-p>pertinent</verb-p>
+		<p>ad</p>
+		<acc-p>inferiorem</acc-p>
+		<acc-p>partem</acc-p>
+		<gen-p>fluminis</gen-p>
+		<gen-p>Rheni,</gen-p>
+		<verb-p>spectant</verb-p>
+		<p>in</p>
+		<acc-p>septentrionem</acc-p>
+		<p>et</p>
+		<acc-p>orientem</acc-p>
+		<acc-p>solem.</acc-p>
+		<nom-p>Aquitania</nom-p>
+		<p>a</p>
+		<abl-p>Garumna</abl-p>
+		<abl-p>flumine</abl-p>
+		<p>ad</p>
+		<acc-p>Pyrenaeos</acc-p>
+		<acc-p>montes</acc-p>
+		<p>et</p>
+		<acc-p>eam</acc-p>
+		<acc-p>partem</acc-p>
+		<p>Oceani</p>
+		<p>quae</p>
+		<verb-p>est</verb-p>
+		<p>ad</p>
+		<acc-p>Hispaniam</acc-p>
+		<verb-p>pertinet;</verb-p>
+		<verb-p>spectat</verb-p>
+		<p>inter</p>
+		<acc-p>occasum</acc-p>
+		<gen-p>solis</gen-p>
+		<p>et</p>
+		<acc-p>septentriones.</acc-p>
+		<br>
+		</div>
+	</div>
+
+	<button class="accordion">Caesar 1.2</button>
+		<div class="panel">
+			<p>Apud</p>
+			<nom-p>Helvetios</nom-p>
+			<p>longe</p>
+			<nom-p>nobilissimus</nom-p>
+			<verb-p>fuit</verb-p>
+			<p>et</p>
+			<nom-p>ditissimus</nom-p>
+			<nom-p>Orgetorix.</nom-p>
+			<nom-p>Is</nom-p>
+			<abl-p>M.</abl-p>
+			<abl-p>Messala,</abl-p>
+			<abl-p>M.</abl-p>
+			<abl-p>Pisone</abl-p>
+			<abl-p>consulibus</abl-p>
+			<gen-p>regni</gen-p>
+			<abl-p>cupiditate</abl-p>
+			<verb-p>inductus</verb-p>
+			<acc-p>coniurationem</acc-p>
+			<gen-p>nobilitatis</gen-p>
+			<verb-p>fecit</verb-p>
+			<p>et</p>
+			<dat-p>civitati</dat-p>
+			<verb-p>persuasit</verb-p>
+			<p>ut</p>
+			<p>de</p>
+			<abl-p>finibus</abl-p>
+			<p>suis</p>
+			<abl-p>cum</abl-p>
+			<abl-p>omnibus</abl-p>
+			<abl-p>copiis</abl-p>
+			<verb-p>exirent:</verb-p>
+			<p>perfacile</p>
+			<verb-p>esse,</verb-p>
+			<p>cum</p>
+			<abl-p>virtute</abl-p>
+			<dat-p>omnibus</dat-p>
+			<verb-p>praestarent,</verb-p>
+			<gen-p>totius</gen-p>
+			<gen-p>Galliae</gen-p>
+			<abl-p>imperio</abl-p>
+			<verb-p>potiri.</verb-p>
+			<nom-p>Id</nom-p>
+			<abl-p>hoc</abl-p>
+			<p>facilius</p>
+			<acc-p>iis</acc-p>
+			<verb-p>persuasit,</verb-p>
+			<p>quod</p>
+			<p>undique</p>
+			<gen-p>loci</gen-p>
+			<abl-p>natura</abl-p>
+			<nom-p>Helvetii</nom-p>
+			<verb-p>continentur:</verb-p>
+			<abl-p>una</abl-p>
+			<p>ex</p>
+			<abl-p>parte</abl-p>
+			<abl-p>flumine</abl-p>
+			<abl-p>Rheno</abl-p>
+			<abl-p>latissimo</abl-p>
+			<p>atque</p>
+			<abl-p>altissimo,</abl-p>
+			<p>qui</p>
+			<acc-p>agrum</acc-p>
+			<acc-p>Helvetium</acc-p>
+			<p>a</p>
+			<abl-p>Germanis</abl-p>
+			<verb-p>dividit;</verb-p>
+			<p>altera</p>
+			<p>ex</p>
+			<abl-p>parte</abl-p>
+			<p>monte</p>
+			<p>Iura</p>
+			<abl-p>altissimo,</abl-p>
+			<p>qui</p>
+			<verb-p>est</verb-p>
+			<p>inter</p>
+			<acc-p>Sequanos</acc-p>
+			<p>et</p>
+			<acc-p>Helvetios;</acc-p>
+			<abl-p>tertia</abl-p>
+			<abl-p>lacu</abl-p>
+			<abl-p>Lemanno</abl-p>
+			<p>et</p>
+			<abl-p>flumine</abl-p>
+			<abl-p>Rhodano,</abl-p>
+			<p>qui</p>
+			<acc-p>provinciam</acc-p>
+			<acc-p>nostram</acc-p>
+			<p>ab</p>
+			<abl-p>Helvetiis</abl-p>
+			<verb-p>dividit.</verb-p>
+			<abl-p>His</abl-p>
+			<abl-p>rebus</abl-p>
+			<verb-p>fiebat</verb-p>
+			<p>ut</p>
+			<p>et</p>
+			<p>minus</p>
+			<p>late</p>
+			<verb-p>vagarentur</verb-p>
+			<p>et</p>
+			<p>minus</p>
+			<p>facile</p>
+			<dat-p>finitimis</dat-p>
+			<acc-p>bellum</acc-p>
+			<verb-p>inferre</verb-p>
+			<verb-p>possent;</verb-p>
+			<p>qua</p>
+			<p>ex</p>
+			<abl-p>parte</abl-p>
+			<nom-p>homines</nom-p>
+			<gen-p>bellandi</gen-p>
+			<nom-p>cupidi</nom-p>
+			<abl-p>magno</abl-p>
+			<abl-p>dolore</abl-p>
+			<verb-p>adficiebantur.</verb-p>
+			<p>Pro</p>
+			<nom-p>multitudine</nom-p>
+			<p>autem</p>
+			<nom-p>hominum</nom-p>
+			<p>et</p>
+			<p>pro</p>
+			<nom-p>gloria</nom-p>
+			<gen-p>belli</gen-p>
+			<p>atque</p>
+			<gen-p>fortitudinis</gen-p>
+			<acc-p>angustos</acc-p>
+			<p>se</p>
+			<p>fines</p>
+			<verb-p>habere</verb-p>
+			<verb-p>arbitrabantur,</verb-p>
+			<p>qui</p>
+			<p>in</p>
+			<acc-p>longitudinem</acc-p>
+			<p>milia</p>
+			<p>passuum</p>
+			<p>CCXL,</p>
+			<p>in</p>
+			<acc-p>latitudinem</acc-p>
+			<p>CLXXX</p>
+			<verb-p>patebant.</verb-p>
+		</div>
+
+	<button class="accordion">Caesar 1.3</button>
+		<div class="panel">
+			<abl-p>His</abl-p>
+			<abl-p>rebus</abl-p>
+			<verb-p>adducti</verb-p>
+			<p>et</p>
+			<abl-p>auctoritate</abl-p>
+			<gen-p>Orgetorigis</gen-p>
+			<p>permoti</p>
+			<p>constituerunt</p>
+			<acc-p>ea</acc-p>
+			<p>quae</p>
+			<p>ad</p>
+			<acc-p>proficiscendum</acc-p>
+			<verb-p>pertinerent</verb-p>
+			<verb-p>comparare,</verb-p>
+			<gen-p>iumentorum</gen-p>
+			<p>et</p>
+			<gen-p>carrorum</gen-p>
+			<p>quam</p>
+			<p>maximum</p>
+			<acc-p>numerum</acc-p>
+			<verb-p>coemere,</verb-p>
+			<acc-p>sementes</acc-p>
+			<p>quam</p>
+			<acc-p>maximas</acc-p>
+			<verb-p>facere,</verb-p>
+			<p>ut</p>
+			<p>in</p>
+			<abl-p>itinere</abl-p>
+			<nom-p>copia</nom-p>
+			<gen-p>frumenti</gen-p>
+			<verb-p>suppeteret,</verb-p>
+			<p>cum</p>
+			<abl-p>proximis</abl-p>
+			<abl-p>civitatibus</abl-p>
+			<acc-p>pacem</acc-p>
+			<p>et</p>
+			<acc-p>amicitiam</acc-p>
+			<verb-p>confirmare.</verb-p>
+			<p>Ad</p>
+			<acc-p>eas</acc-p>
+			<acc-p>res</acc-p>
+			<acc-p>conficiendas</acc-p>
+			<p>biennium</p>
+			<dat-p>sibi</dat-p>
+			<nom-p>satis</nom-p>
+			<verb-p>esse</verb-p>
+			<verb-p>duxerunt;</verb-p>
+			<p>in</p>
+			<acc-p>tertium</acc-p>
+			<acc-p>annum</acc-p>
+			<acc-p>profectionem</acc-p>
+			<abl-p>lege</abl-p>
+			<verb-p>confirmant.</verb-p>
+			<p>Ad</p>
+			<acc-p>eas</acc-p>
+			<acc-p>res</acc-p>
+			<acc-p>conficiendas</acc-p>
+			<nom-p>Orgetorix</nom-p>
+			<verb-p>deligitur.</verb-p>
+			<nom-p>Is</nom-p>
+			<dat-p>sibi</dat-p>
+			<acc-p>legationem</acc-p>
+			<p>ad</p>
+			<acc-p>civitates</acc-p>
+			<verb-p>suscipit.</verb-p>
+			<p>In</p>
+			<abl-p>eo</abl-p>
+			<abl-p>itinere</abl-p>
+			<verb-p>persuadet</verb-p>
+			<dat-p>Castico,</dat-p>
+			<gen-p>Catamantaloedis</gen-p>
+			<dat-p>filio,</dat-p>
+			<dat-p>Sequano,</dat-p>
+			<p>cuius</p>
+			<p>pater</p>
+			<acc-p>regnum</acc-p>
+			<p>in</p>
+			<abl-p>Sequanis</abl-p>
+			<acc-p>multos</acc-p>
+			<acc-p>annos</acc-p>
+			<verb-p>obtinuerat</verb-p>
+			<p>et</p>
+			<p>a</p>
+			<abl-p>senatu</abl-p>
+			<gen-p>populi</gen-p>
+			<gen-p>Romani</gen-p>
+			<p>amicus</p>
+			<verb-p>appellatus</verb-p>
+			<verb-p>erat,</verb-p>
+			<p>ut</p>
+			<acc-p>regnum</acc-p>
+			<p>in</p>
+			<abl-p>civitate</abl-p>
+			<abl-p>sua</abl-p>
+			<verb-p>occuparet,</verb-p>
+			<p>quod</p>
+			<nom-p>pater</nom-p>
+			<p>ante</p>
+			<verb-p>habuerit;</verb-p>
+			<p>itemque</p>
+			<dat-p>Dumnorigi</dat-p>
+			<p>Haeduo,</p>
+			<dat-p>fratri</dat-p>
+			<gen-p>Diviciaci,</gen-p>
+			<p>qui</p>
+			<abl-p>eo</abl-p>
+			<abl-p>tempore</abl-p>
+			<acc-p>principatum</acc-p>
+			<p>in</p>
+			<abl-p>civitate</abl-p>
+			<verb-p>obtinebat</verb-p>
+			<p>ac</p>
+			<p>maxime</p>
+			<dat-p>plebi</dat-p>
+			<verb-p>acceptus</verb-p>
+			<verb-p>erat,</verb-p>
+			<p>ut</p>
+			<p>idem</p>
+			<verb-p>conaretur</verb-p>
+			<verb-p>persuadet</verb-p>
+			<p>eique</p>
+			<acc-p>filiam</acc-p>
+			<acc-p>suam</acc-p>
+			<p>in</p>
+			<acc-p>matrimonium</acc-p>
+			<verb-p>dat.</verb-p>
+			<p>Perfacile</p>
+			<verb-p>factu</verb-p>
+			<verb-p>esse</verb-p>
+			<dat-p>illis</dat-p>
+			<verb-p>probat</verb-p>
+			<acc-p>conata</acc-p>
+			<verb-p>perficere,</verb-p>
+			<p>propterea</p>
+			<p>quod</p>
+			<nom-p>ipse</nom-p>
+			<p>suae</p>
+			<p>civitatis</p>
+			<acc-p>imperium</acc-p>
+			<verb-p>obtenturus</verb-p>
+			<verb-p>esset:</verb-p>
+			<p>non</p>
+			<verb-p>esse</verb-p>
+			<p>dubium</p>
+			<p>quin</p>
+			<gen-p>totius</gen-p>
+			<gen-p>Galliae</gen-p>
+			<acc-p>plurimum</acc-p>
+			<nom-p>Helvetii</nom-p>
+			<verb-p>possent;</verb-p>
+			<acc-p>se</acc-p>
+			<abl-p>suis</abl-p>
+			<abl-p>copiis</abl-p>
+			<abl-p>suoque</abl-p>
+			<abl-p>exercitu</abl-p>
+			<dat-p>illis</dat-p>
+			<acc-p>regna</acc-p>
+			<verb-p>conciliaturum</verb-p>
+			<verb-p>confirmat.</verb-p>
+			<abl-p>Hac</abl-p>
+			<abl-p>oratione</abl-p>
+			<verb-p>adducti</verb-p>
+			<p>inter</p>
+			<acc-p>se</acc-p>
+			<acc-p>fidem</acc-p>
+			<p>et</p>
+			<acc-p>ius</acc-p>
+			<acc-p>iurandum</acc-p>
+			<verb-p>dant</verb-p>
+			<p>et</p>
+			<abl-p>regno</abl-p>
+			<verb-p>occupato</verb-p>
+			<p>per</p>
+			<p>tres</p>/
+			<acc-p>potentissimos</acc-p>
+			<p>ac</p>
+			<acc-p>firmissimos</acc-p>
+			<acc-p>populos</acc-p>
+			<gen-p>totius</gen-p>
+			<gen-p>Galliae</gen-p>
+			<acc-p>sese</acc-p>
+			<verb-p>potiri</verb-p>
+			<verb-p>posse</verb-p>
+			<verb-p>sperant.</verb-p>
+		</div>
+
+	<button class="accordion">Caesar 1.4</button>
+		<div class="panel">
+			<nom-p>Ea</nom-p>
+			<nom-p>res</nom-p>
+			<verb-p>est</verb-p>
+			<dat-p>Helvetiis</dat-p>
+			<p>per</p>
+			<acc-p>indicium</acc-p>
+			<verb-p>enuntiata.</verb-p>
+			<abl-p>Moribus</abl-p>
+			<abl-p>suis</abl-p>
+			<acc-p>Orgetoricem</acc-p>
+			<p>ex</p>
+			<abl-p>vinculis</abl-p>
+			<acc-p>causam</acc-p>
+			<verb-p>dicere</verb-p>
+			<verb-p>coegerunt;</verb-p>
+			<verb-p>damnatum</verb-p>
+			<acc-p>poenam</acc-p>
+			<verb-p>sequi</verb-p>
+			<verb-p>oportebat,</verb-p>
+			<p>ut</p>
+			<dat-p>igni</dat-p>
+			<verb-p>cremaretur.</verb-p>
+			<abl-p>Die</abl-p>
+			<verb-p>constituta</verb-p>
+			<gen-p>causae</gen-p>
+			<gen-p>dictionis</gen-p>
+			<nom-p>Orgetorix</nom-p>
+			<p>ad</p>
+			<acc-p>iudicium</acc-p>
+			<p>omnem</p>
+			<acc-p>suam</acc-p>
+			<acc-p>familiam,</acc-p>
+			<p>ad</p>
+			<acc-p>hominum</acc-p>
+			<p>milia</p>
+			<p>decem,</p>
+			<p>undique</p>
+			<verb-p>coegit,</verb-p>
+			<p>et</p>
+			<acc-p>omnes</acc-p>
+			<acc-p>clientes</acc-p>
+			<acc-p>obaeratosque</acc-p>
+			<acc-p>suos,</acc-p>
+			<p>quorum</p>
+			<acc-p>magnum</acc-p>
+			<acc-p>numerum</acc-p>
+			<verb-p>habebat,</verb-p>
+			<p>eodem</p>
+			<verb-p>conduxit;</verb-p>
+			<p>per</p>
+			<acc-p>eos</acc-p>
+			<p>ne</p>
+			<acc-p>causam</acc-p>
+			<verb-p>diceret</verb-p>
+			<acc-p>se</acc-p>
+			<verb-p>eripuit.</verb-p>
+			<p>Cum</p>
+			<p>civitas</p>
+			<p>ob</p>
+			<acc-p>eam</acc-p>
+			<acc-p>rem</acc-p>
+			<verb-p>incitata</verb-p>
+			<abl-p>armis</abl-p>
+			<p>ius</p>
+			<p>suum</p>
+			<verb-p>exsequi</verb-p>
+			<verb-p>conaretur</verb-p>
+			<acc-p>multitudinemque</acc-p>
+			<acc-p>hominum</acc-p>
+			<p>ex</p>
+			<abl-p>agris</abl-p>
+			<nom-p>magistratus</nom-p>
+			<verb-p>cogerent,</verb-p>
+			<nom-p>Orgetorix</nom-p>
+			<verb-p>mortuus</verb-p>
+			<verb-p>est;</verb-p>
+			<p>neque</p>
+			<verb-p>abest</verb-p>
+			<nom-p>suspicio,</nom-p>
+			<p>ut</p>
+			<nom-p>Helvetii</nom-p>
+			<verb-p>arbitrantur,</verb-p>
+			<p>quin</p>
+			<nom-p>ipse</nom-p>
+			<dat-p>sibi</dat-p>
+			<acc-p>mortem</acc-p>
+			<verb-p>consciverit.</verb-p>
+		</div> 
+	
+	<button class="accordion">Caesar 1.5</button>
+		<div class="panel">
+			<p>Post</p>
+			<p>eius</p>
+			<acc-p>mortem</acc-p>
+			<abl-p>nihilo</abl-p>
+			<p>minus</p>
+			<nom-p>Helvetii</nom-p>
+			<acc-p>id</acc-p>
+			<p>quod</p>
+			<verb-p>constituerant</verb-p>
+			<verb-p>facere</verb-p>
+			<verb-p>conantur,</verb-p>
+			<p>ut</p>
+			<p>e</p>
+			<abl-p>finibus</abl-p>
+			<p>suis</p>
+			<verb-p>exeant.</verb-p>
+			<p>Ubi</p>
+			<p>iam</p>
+			<p>se</p>
+			<p>ad</p>
+			<acc-p>eam</acc-p>
+			<acc-p>rem</acc-p>
+			<acc-p>paratos</acc-p>
+			<verb-p>esse</verb-p>
+			<verb-p>arbitrati</verb-p>
+			<verb-p>sunt,</verb-p>
+			<acc-p>oppida</acc-p>
+			<p>sua</p>
+			<p>omnia,</p>
+			<abl-p>numero</abl-p>
+			<p>ad</p>
+			<p>duodecim,</p>
+			<acc-p>vicos</acc-p>
+			<p>ad</p>
+			<acc-p>quadringentos,</acc-p>
+			<p>reliqua</p>
+			<acc-p>privata</acc-p>
+			<acc-p>aedificia</acc-p>
+			<verb-p>incendunt;</verb-p>
+			<acc-p>frumentum</acc-p>
+			<acc-p>omne,</acc-p>
+			<p>praeter</p>
+			<p>quod</p>
+			<abl-p>secum</abl-p>
+			<verb-p>portaturi</verb-p>
+			<verb-p>erant,</verb-p>
+			<verb-p>comburunt,</verb-p>
+			<p>ut</p>
+			<acc-p>domum</acc-p>
+			<gen-p>reditionis</gen-p>
+			<abl-p>spe</abl-p>
+			<verb-p>sublata</verb-p>
+			<nom-p>paratiores</nom-p>
+			<p>ad</p>
+			<acc-p>omnia</acc-p>
+			<acc-p>pericula</acc-p>
+			<p>subeunda</p><!--gerendive in some case-->
+			<verb-p>essent;</verb-p>
+			<gen-p>trium</gen-p>
+			<gen-p>mensum</gen-p>
+			<verb-p>molita</verb-p>
+			<acc-p>cibaria</acc-p>
+			<dat-p>sibi</dat-p>
+			<p>quemque</p>
+			<abl-p>domo</abl-p>
+			<verb-p>efferre</verb-p>
+			<verb-p>iubent.</verb-p>
+			<verb-p>Persuadent</verb-p>
+			<dat-p>Rauracis</dat-p>
+			<p>et</p>
+			<dat-p>Tulingis</dat-p>
+			<p>et</p>
+			<dat-p>Latobrigis</dat-p>
+			<dat-p>finitimis,</dat-p>
+			<p>uti</p>
+			<abl-p>eodem</abl-p>
+			<verb-p>usi</verb-p>
+			<abl-p>consilio</abl-p>
+			<abl-p>oppidis</abl-p>
+			<abl-p>suis</abl-p>
+			<abl-p>vicisque</abl-p>
+			<abl-p>exustis</abl-p>
+			<p>una</p>
+			<p>cum</p>
+			<abl-p>iis</abl-p>
+			<verb-p>proficiscantur,</verb-p>
+			<acc-p>Boiosque,</acc-p>
+			<p>qui</p>
+			<p>trans</p>
+			<p>Rhenum</p>
+			<verb-p>incoluerant</verb-p>
+			<p>et</p>
+			<p>in</p>
+			<acc-p>agrum</acc-p>
+			<acc-p>Noricum</acc-p>
+			<verb-p>transierant</verb-p>
+			<acc-p>Noreiamque</acc-p>
+			<verb-p>oppugnabant,</verb-p>
+			<acc-p>receptos</acc-p>
+			<p>ad</p>
+			<acc-p>se</acc-p>
+			<acc-p>socios</acc-p>
+			<dat-p>sibi</dat-p>
+			<verb-p>adsciscunt.</verb-p>		
+		</div>
+	
+	<button class="accordion">Caesar 1.6</button>
+		<div class="panel">
+			<verb-p>Erant</verb-p>
+			<abl-p>omnino</abl-p>
+			<nom-p>itinera</nom-p>
+			<nom-p>duo,</nom-p>
+			<abl-p>quibus</abl-p>
+			<abl-p>itineribus</abl-p>
+			<abl-p>domo</abl-p>
+			<verb-p>exire</verb-p>
+			<verb-p>possent:</verb-p>
+			<nom-p>unum</nom-p>
+			<p>per</p>
+			<acc-p>Sequanos,</acc-p>
+			<p>angustum</p>
+			<p>et</p>
+			<p>difficile,</p>
+			<p>inter</p>
+			<acc-p>montem</acc-p>
+			<acc-p>Iuram</acc-p>
+			<p>et</p>
+			<acc-p>flumen</acc-p>
+			<acc-p>Rhodanum,</acc-p>
+			<p>vix</p>
+			<p>qua</p>
+			<p>singuli</p>
+			<nom-p>carri</nom-p>
+			<verb-p>ducerentur,</verb-p>
+			<nom-p>mons</nom-p>
+			<p>autem</p>
+			<nom-p>altissimus</nom-p>
+			<verb-p>impendebat,</verb-p>
+			<p>ut</p>
+			<p>facile</p>
+			<nom-p>perpauci</nom-p>
+			<verb-p>prohibere</verb-p>
+			<verb-p>possent;</verb-p>
+			<p>alterum</p>
+			<p>per</p>
+			<acc-p>provinciam</acc-p>
+			<acc-p>nostram,</acc-p>
+			<abl-p>multo</abl-p>
+			<p>facilius</p>
+			<p>atque</p>
+			<p>expeditius,</p>
+			<p>propterea</p>
+			<p>quod</p>
+			<p>inter</p>
+			<acc-p>fines</acc-p>
+			<gen-p>Helvetiorum</gen-p>
+			<p>et</p>
+			<gen-p>Allobrogum,</gen-p>
+			<p>qui</p>
+			<p>nuper</p>
+			<verb-p>pacati</verb-p>
+			<verb-p>erant,</verb-p>
+			<p>Rhodanus</p>
+			<verb-p>fluit</verb-p>
+			<nom-p>isque</nom-p>
+			<p>non</p>
+			<abl-p>nullis</abl-p>
+			<abl-p>locis</abl-p>
+			<abl-p>vado</abl-p>
+			<verb-p>transitur.</verb-p>
+			<nom-p>Extremum</nom-p>
+			<nom-p>oppidum</nom-p>
+			<gen-p>Allobrogum</gen-p>
+			<verb-p>est</verb-p>
+			<nom-p>proximumque</nom-p>
+			<gen-p>Helvetiorum</gen-p>
+			<dat-p>finibus</dat-p>
+			<nom-p>Genava.</nom-p>
+			<p>Ex</p>
+			<abl-p>eo</abl-p>
+			<abl-p>oppido</abl-p>
+			<nom-p>pons</nom-p>
+			<p>ad</p>
+			<acc-p>Helvetios</acc-p>
+			<verb-p>pertinet.</verb-p>
+			<p>Allobrogibus</p>
+			<acc-p>sese</acc-p>
+			<p>vel</p>
+			<verb-p>persuasuros,</verb-p>
+			<p>quod</p>
+			<p>nondum</p>
+			<abl-p>bono</abl-p>
+			<abl-p>animo</abl-p>
+			<p>in</p>
+			<acc-p>populum</acc-p>
+			<acc-p>Romanum</acc-p>
+			<verb-p>viderentur,</verb-p>
+			<verb-p>existimabant</verb-p>
+			<p>vel</p>
+			<acc-p>vi</acc-p>
+			<verb-p>coacturos</verb-p>
+			<p>ut</p>
+			<p>per</p>
+			<acc-p>suos</acc-p>
+			<acc-p>fines</acc-p>
+			<acc-p>eos</acc-p>
+			<verb-p>ire</verb-p>
+			<verb-p>paterentur.</verb-p>
+			<abl-p>Omnibus</abl-p>
+			<abl-p>rebus</abl-p>
+			<p>ad</p>
+			<acc-p>profectionem</acc-p>
+			<verb-p>comparatis</verb-p>
+			<acc-p>diem</acc-p>
+			<verb-p>dicunt,</verb-p>
+			<abl-p>qua</abl-p>
+			<abl-p>die</abl-p>
+			<p>ad</p>
+			<acc-p>ripam</acc-p>
+			<gen-p>Rhodani</gen-p>
+			<p>omnes</p>
+			<verb-p>conveniant.</verb-p>
+			<nom-p>Is</nom-p>
+			<nom-p>dies</nom-p>
+			<verb-p>erat</verb-p>
+			<nom-p>a.</nom-p>
+			<nom-p>d.</nom-p>
+			<nom-p>V.</nom-p>
+			<nom-p>Kal.</nom-p>
+			<nom-p>Apr.</nom-p>
+			<nom-p>L.</nom-p>
+			<abl-p>Pisone,</abl-p>
+			<abl-p>A.</abl-p>
+			<abl-p>Gabinio</abl-p>
+			<abl-p>consulibus.</abl-p>
+		</div>
+	
+	<button class="accordion">Caesar 1.7</button>
+		<div class="panel">
+			<dat-p>Caesari</dat-p>
+			<p>cum</p>
+			<nom-p>id</nom-p>
+			<verb-p>nuntiatum</verb-p>
+			<verb-p>esset,</verb-p>
+			<acc-p>eos</acc-p>
+			<p>per</p>
+			<acc-p>provinciam</acc-p>
+			<acc-p>nostram</acc-p>
+			<p>iter</p>
+			<verb-p>facere</verb-p>
+			<verb-p>conari,</verb-p>
+			<verb-p>maturat</verb-p>
+			<p>ab</p>
+			<abl-p>urbe</abl-p>
+			<verb-p>proficisci</verb-p>
+			<p>et</p>
+			<p>quam</p>
+			<abl-p>maximis</abl-p>
+			<verb-p>potest</verb-p>
+			<abl-p>itineribus</abl-p>
+			<p>in</p>
+			<acc-p>Galliam</acc-p>
+			<acc-p>ulteriorem</acc-p>
+			<verb-p>contendit</verb-p>
+			<p>et</p>
+			<p>ad</p>
+			<acc-p>Genavam</acc-p>
+			<verb-p>pervenit.</verb-p>
+			<dat-p>Provinciae</dat-p>
+			<dat-p>toti</dat-p>
+			<p>quam</p>
+			<p>maximum</p>
+			<verb-p>potest</verb-p>
+			<acc-p>militum</acc-p>
+			<acc-p>numerum</acc-p>
+			<verb-p>imperat</verb-p>
+			<verb-p>(erat</verb-p>
+			<p>omnino</p>
+			<p>in</p>
+			<abl-p>Gallia</abl-p>
+			<p>ulteriore</p>
+			<abl-p>legio</abl-p>
+			<p>una),</p>
+			<acc-p>pontem,</acc-p>
+			<p>qui</p>
+			<verb-p>erat</verb-p>
+			<p>ad</p>
+			<acc-p>Genavam,</acc-p>
+			<verb-p>iubet</verb-p>
+			<verb-p>rescindi.</verb-p>
+			<p>Ubi</p>
+			<p>de</p>
+			<p>eius</p>
+			<abl-p>adventu</abl-p>
+			<nom-p>Helvetii</nom-p>
+			<p>certiores</p>
+			<verb-p>facti</verb-p>
+			<verb-p>sunt,</verb-p>
+			<acc-p>legatos</acc-p>
+			<p>ad</p>
+			<acc-p>eum</acc-p>
+			<verb-p>mittunt</verb-p>
+			<acc-p>nobilissimos</acc-p>
+			<gen-p>civitatis,</gen-p>
+			<gen-p>cuius</gen-p>
+			<gen-p>legationis</gen-p>
+			<nom-p>Nammeius</nom-p>
+			<p>et</p>
+			<nom-p>Verucloetius</nom-p>
+			<acc-p>principem</acc-p>
+			<acc-p>locum</acc-p>
+			<verb-p>obtinebant,</verb-p>
+			<p>qui</p>
+			<verb-p>dicerent</verb-p>
+			<dat-p>sibi</dat-p>
+			<verb-p>esse</verb-p>
+			<p>in</p>
+			<abl-p>animo</abl-p>
+			<p>sine</p>
+			<abl-p>ullo</abl-p>
+			<abl-p>maleficio</abl-p>
+			<acc-p>iter</acc-p>
+			<p>per</p>
+			<acc-p>provinciam</acc-p>
+			<verb-p>facere,</verb-p>
+			<p>propterea</p>
+			<p>quod</p>
+			<acc-p>aliud</acc-p>
+			<acc-p>iter</acc-p>
+			<verb-p>haberent</verb-p>
+			<acc-p>nullum:</acc-p>
+			<verb-p>rogare</verb-p>
+			<p>ut</p>
+			<gen-p>eius</gen-p>
+			<abl-p>voluntate</abl-p>
+			<acc-p>id</acc-p>
+			<dat-p>sibi</dat-p>
+			<verb-p>facere</verb-p>
+			<verb-p>liceat.</verb-p>
+			<nom-p>Caesar,</nom-p>
+			<p>quod</p>
+			<abl-p>memoria</abl-p>
+			<verb-p>tenebat</verb-p>
+			<acc-p>L.</acc-p>
+			<acc-p>Cassium</acc-p>
+			<acc-p>consulem</acc-p>
+			<verb-p>occisum</verb-p>
+			<acc-p>exercitumque</acc-p>
+			<gen-p>eius</gen-p>
+			<p>ab</p>
+			<acc-p>Helvetiis</acc-p>
+			<verb-p>pulsum</verb-p>
+			<p>et</p>
+			<p>sub</p>
+			<acc-p>iugum</acc-p>
+			<verb-p>missum,</verb-p>
+			<acc-p>concedendum</acc-p>
+			<p>non</p>
+			<verb-p>putabat;</verb-p>
+			<p>neque</p>
+			<acc-p>homines</acc-p>
+			<abl-p>inimico</abl-p>
+			<abl-p>animo,</abl-p>
+			<verb-p>data</verb-p>
+			<abl-p>facultate</abl-p>
+			<p>per</p>
+			<acc-p>provinciam</acc-p>
+			<gen-p>itineris</gen-p>
+			<gen-p>faciundi,</gen-p>
+			<acc-p>temperaturos</acc-p>
+			<p>ab</p>
+			<abl-p>iniuria</abl-p>
+			<p>et</p>
+			<abl-p>maleficio</abl-p>
+			<verb-p>existimabat.</verb-p>
+			<p>Tamen,</p>
+			<p>ut</p>
+			<nom-p>spatium</nom-p>
+			<verb-p>intercedere</verb-p>
+			<verb-p>posset</verb-p>
+			<p>dum</p>
+			<nom-p>milites</nom-p>
+			<acc-p>quos</acc-p>
+			<verb-p>imperaverat</verb-p>
+			<verb-p>convenirent,</verb-p>
+			<dat-p>legatis</dat-p>
+			<verb-p>respondit</verb-p>
+			<acc-p>diem</acc-p>
+			<acc-p>se</acc-p>
+			<p>ad</p>
+			<acc-p>deliberandum</acc-p>
+			<verb-p>sumpturum:</verb-p>
+			<p>si</p>
+			<acc-p>quid</acc-p>
+			<verb-p>vellent,</verb-p>
+			<p>ad</p>
+			<acc-p>Id.</acc-p>
+			<acc-p>April.</acc-p>
+			<verb-p>reverterentur.</verb-p>
+		</div>
+</div>
+	
+<!--Javascript for the accordian buttons -->
+<script>
+		var acc = document.getElementsByClassName("accordion");
+		var i;
+
+		for (i = 0; i < acc.length; i++) {
+			acc[i].onclick = function(){
+				/* Toggle between adding and removing the "active" class, to highlight the button that controls the panel */
+				this.classList.toggle("active");
+
+				/* Toggle between hiding and showing the active panel */
+				var panel = this.nextElementSibling;
+				if (panel.style.display === "block") {
+					panel.style.display = "none";
+				} else {
+					panel.style.display = "block";
+				}
+			}
+		}
+	</script>
+	
+</Body>
+
+</HTML>

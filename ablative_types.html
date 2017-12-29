@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<HTML>
+	
+<Head>
+	<title> Caesar Ablatives </title>
+	<link rel="stylesheet" href="ablative_style.css">
+	
+	<!--stylesheet to make circular buttons -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<!-- makes a new type of html tag copying the properties of p -->
+	<script>
+		/*creates a paragraph for nominatives so that all nominatives can be changed at once*/
+		var NominativeP = document.registerElement('nom-p', {
+			prototype: Object.create(HTMLElement.prototype), extends: 'p'
+		});
+		
+		/*creates a paragraph for genitives so that all genitives can be changed at once*/
+		var GenitiveP = document.registerElement('gen-p', {
+			prototype: Object.create(HTMLButtonElement.prototype), extends: 'p'
+		});
+		
+		/*creates a paragraph for datives so that all datives can be changed at once*/
+		var DativeP = document.registerElement('dat-p', {
+			prototype: Object.create(HTMLButtonElement.prototype), extends: 'p'
+		});
+		
+		/*creates a paragraph for accusatives so that all accusatives can be changed at once*/
+		var AccusativeP = document.registerElement('acc-p', {
+			prototype: Object.create(HTMLButtonElement.prototype), extends: 'p'
+		});
+		
+		/*creates a paragraph for ablatives so that all ablatives can be changed at once*/
+		var AblativeP = document.registerElement('abl-p', {
+			prototype: Object.create(HTMLButtonElement.prototype), extends: 'p'
+		});
+		
+		/*creates a paragraph for verbs so that all verbs can be changed at once*/
+		var VerbP = document.registerElement('verb-p', {
+			prototype: Object.create(HTMLButtonElement.prototype), extends: 'p'
+		});
+	</script>
+
+<!--function to highlight and unhighlight things-->	
+	<script>
+		/*(un)highlights absolutes #5F9F9F*/
+		function absoluteFunction() {
+    		var x = document.getElementById("1.1");
+			var y = x.getElementsByClassName("abso");
+    		var i;
+    		for (i = 0; i < y.length; i++) {
+        		if (y[i].style.backgroundColor == "#5F9F9F") {
+					y[i].style.backgroundColor = "gainsboro";
+					} else {
+						y[i].style.backgroundColor = "#5F9F9F";
+					}
+				}			
+			}
+		/*highlights means #79CDCD*/
+		function meansFunction() {
+			var x = document.getElementById("1.1");
+			var y = x.getElementsByClassName("means");
+    		var i;
+    		for (i = 0; i < y.length; i++) {
+        		if (y[i].style.backgroundColor == "#79CDCD") {
+					y[i].style.backgroundColor = "gainsboro";
+					} else {
+						y[i].style.backgroundColor = "#79CDCD";
+					}
+				}			
+			}
+		/*highlights manners #AFEEEE*/
+		function mannerFunction() {
+			var x = document.getElementById("1.1");
+			var y = x.getElementsByClassName("manner");
+    		var i;
+    		for (i = 0; i < y.length; i++) {
+        		if (y[i].style.backgroundColor == "#AFEEEE") {
+					y[i].style.backgroundColor = "gainsboro";
+					} else {
+						y[i].style.backgroundColor = "#AFEEEE";
+					}
+				}			
+			}
+		/*highlights time whens #37FDFC*/
+		function timewhenFunction() {
+			var x = document.getElementById("1.1");
+			var y = x.getElementsByClassName("twhen");
+    		var i;
+    		for (i = 0; i < y.length; i++) {
+        		if (y[i].style.backgroundColor == "#37FDFC") {
+					y[i].style.backgroundColor = "gainsboro";
+					} else {
+						y[i].style.backgroundColor = "#37FDFC";
+					}
+				}			
+			}
+		/*highlights seperation #00C5CD*/
+		function seperationFunction() {
+			var x = document.getElementById("1.1");
+			var y = x.getElementsByClassName("sep");
+    		var i;
+    		for (i = 0; i < y.length; i++) {
+        		if (y[i].style.backgroundColor == "#00C5CD") {
+					y[i].style.backgroundColor = "gainsboro";
+					} else {
+						y[i].style.backgroundColor = "#00C5CD";
+					}
+				}			
+			}
+		/*highlights place from which #8EE5EE*/
+		function placefromwhichFunction() {
+			var x = document.getElementById("1.1");
+			var y = x.getElementsByClassName("place from which");
+    		var i;
+    		for (i = 0; i < y.length; i++) {
+        		if (y[i].style.backgroundColor == "#8EE5EE") {
+					y[i].style.backgroundColor = "gainsboro";
+					} else {
+						y[i].style.backgroundColor = "#8EE5EE";
+					}
+				}			
+			}
+		/*highlights origin #0EBFE9*/
+		function originFunction() {
+			var x = document.getElementById("1.1");
+			var y = x.getElementsByClassName("origin");
+    		var i;
+    		for (i = 0; i < y.length; i++) {
+        		if (y[i].style.backgroundColor == "#0EBFE9") {
+					y[i].style.backgroundColor = "gainsboro";
+					} else {
+						y[i].style.backgroundColor = "#0EBFE9";
+					}
+				}			
+			}
+		/*highlights agent #0099CC*/
+		function agentFunction() {
+			var x = document.getElementById("1.1");
+			var y = x.getElementsByClassName("agent");
+    		var i;
+    		for (i = 0; i < y.length; i++) {
+        		if (y[i].style.backgroundColor == "#0099CC") {
+					y[i].style.backgroundColor = "gainsboro";
+					} else {
+						y[i].style.backgroundColor = "#0099CC";
+					}
+				}			
+			}
+		/*highlights comparison*/
+		function comparisonFunction() {
+			var x = document.getElementById("1.1");
+			var y = x.getElementsByClassName("compar");
+    		var i;
+    		for (i = 0; i < y.length; i++) {
+        		if (y[i].style.backgroundColor == "lightgreen") {
+					y[i].style.backgroundColor = "gainsboro";
+					} else {
+						y[i].style.backgroundColor = "lightgreen";
+					}
+				}			
+			}
+		/*highlights accompaniment*/
+		function accompanimentFunction() {
+			var x = document.getElementById("1.1");
+			var y = x.getElementsByClassName("accomp");
+    		var i;
+    		for (i = 0; i < y.length; i++) {
+        		if (y[i].style.backgroundColor == "lightgreen") {
+					y[i].style.backgroundColor = "gainsboro";
+					} else {
+						y[i].style.backgroundColor = "lightgreen";
+					}
+				}			
+			}
+		/*highlights cause*/
+		function causeFunction() {
+			var x = document.getElementById("1.1");
+			var y = x.getElementsByClassName("cause");
+    		var i;
+    		for (i = 0; i < y.length; i++) {
+        		if (y[i].style.backgroundColor == "lightgreen") {
+					y[i].style.backgroundColor = "gainsboro";
+					} else {
+						y[i].style.backgroundColor = "lightgreen";
+					}
+				}			
+			}
+		/*highlights degree of difference*/
+		function degreeofdifferenceFunction() {
+			var x = document.getElementById("1.1");
+			var y = x.getElementsByClassName("degdif");
+    		var i;
+    		for (i = 0; i < y.length; i++) {
+        		if (y[i].style.backgroundColor == "lightgreen") {
+					y[i].style.backgroundColor = "gainsboro";
+					} else {
+						y[i].style.backgroundColor = "lightgreen";
+					}
+				}			
+			}
+		/*highlights description*/
+		function descriptionFunction() {
+			var x = document.getElementById("1.1");
+			var y = x.getElementsByClassName("descrip");
+    		var i;
+    		for (i = 0; i < y.length; i++) {
+        		if (y[i].style.backgroundColor == "lightgreen") {
+					y[i].style.backgroundColor = "gainsboro";
+					} else {
+						y[i].style.backgroundColor = "lightgreen";
+					}
+				}			
+			}
+		/*highlights place where*/
+		function placewhereFunction() {
+			var x = document.getElementById("1.1");
+			var y = x.getElementsByClassName("pwhere");
+    		var i;
+    		for (i = 0; i < y.length; i++) {
+        		if (y[i].style.backgroundColor == "lightgreen") {
+					y[i].style.backgroundColor = "gainsboro";
+					} else {
+						y[i].style.backgroundColor = "lightgreen";
+					}
+				}			
+			}
+		/*highlights respect*/
+		function respectFunction() {
+			var x = document.getElementById("1.1");
+			var y = x.getElementsByClassName("resp");
+    		var i;
+    		for (i = 0; i < y.length; i++) {
+        		if (y[i].style.backgroundColor == "lightgreen") {
+					y[i].style.backgroundColor = "gainsboro";
+					} else {
+						y[i].style.backgroundColor = "lightgreen";
+					}
+				}			
+			}
+		/*highlights accordance*/
+		function accordanceFunction() {
+			var x = document.getElementById("1.1");
+			var y = x.getElementsByClassName("accord");
+    		var i;
+    		for (i = 0; i < y.length; i++) {
+        		if (y[i].style.backgroundColor == "lightgreen") {
+					y[i].style.backgroundColor = "gainsboro";
+					} else {
+						y[i].style.backgroundColor = "lightgreen";
+					}
+				}			
+			}
+		/*highlights with prepositions*/
+		function prepositionFunction() {
+			var x = document.getElementById("1.1");
+			var y = x.getElementsByClassName("prep");
+    		var i;
+    		for (i = 0; i < y.length; i++) {
+        		if (y[i].style.backgroundColor == "lightgreen") {
+					y[i].style.backgroundColor = "gainsboro";
+					} else {
+						y[i].style.backgroundColor = "lightgreen";
+					}
+				}			
+			}
+	</script>
+</Head>
+
+<Body>	
+<!--the side navigation so that the highlight buttons are always there -->
+<div class="sidenav"><center>
+	<h3> Highlight! </h3>
+	
+	<div class="leaves">
+	<button class= "highlighters" onclick="absoluteFunction()">absolute</button>
+	</div>
+	
+	<div class="leaves">
+	<button class= "highlighters" type="button" onclick="meansFunction()">means</button>
+	</div>
+	
+	<div class="leaves">
+	<button class= "highlighters" type="button" onclick="mannerFunction()">manner</button>
+	</div>
+		
+	<div class="leaves">
+	<button class= "highlighters" type="button" onclick="timewhenFunction()">time when</button>
+	</div>
+	
+	<div class="leaves">
+	<button class= "highlighters" type="button" onclick="seperationFunction()">seperation</button>
+	</div>
+	
+	<div class="leaves">
+	<button class= "highlighters" type="button" onclick="placewhereFunction()">place from where</button>
+	</div>
+	
+	<div class="leaves">
+	<button class= "highlighters" type="button" onclick="originFunction()">origin</button>
+	</div>
+	
+	<div class="leaves">
+	<button class= "highlighters" type="button" onclick="agentFunction()">agent</button>
+	</div>
+	
+	<div class="leaves">
+	<button class= "highlighters" type="button" onclick="comparisonFunction()">comparison</button>
+	</div>
+	
+	<div class="leaves">
+	<button class= "highlighters" type="button" onclick="accompanimentFunction()">accompaniment</button>
+	</div>
+	
+	<div class="leaves">
+	<button class= "highlighters" type="button" onclick="causeFunction()">cause</button>
+	</div>
+	
+	<div class="leaves">
+	<button class= "highlighters" type="button" onclick="degreeofdifferenceFunction()">degree of difference</button>
+	</div>
+		
+	<div class="leaves">
+	<button class= "highlighters" type="button" onclick="descriptionFunction()">description</button>
+	</div>
+		
+	<div class="leaves">
+	<button class= "highlighters" type="button" onclick="placewhereFunction()">place where</button>
+	</div>
+		
+	<div class="leaves">
+	<button class= "highlighters" type="button" onclick="respectFunction()">respect</button>
+	</div>
+		
+	<div class="leaves">
+	<button class= "highlighters" type="button" onclick="accordanceFunction()">accordance</button>
+	</div>
+		
+	<div class="leaves">
+	<button class= "highlighters" type="button" onclick="prepositionFunction()">with prepositions</button>
+	</div>
+</center></div>
+	
+<!--the actual main content of the website -->
+<div class="main-content" id="1.1">
+	<div><center>
+	<h1> Caesar Something </h1>
+	<h2> The Gallic Wars </h2>
+	<h3> Book 1 - Ablatives</h3>
+	</center></div>
+		
+	<button class="accordion"> Caesar 1.1 </button>
+	<div class="panel">
+		<div>
+		<p>Gallia</p>
+		<p>est</p>
+		<p>omnis</p>
+		<p>divisa</p>
+		<p>in</p>
+		<p>partes</p>
+		<p>tres,</p>
+		<p>quarum</p>
+		<p>unam</p>
+		<p>incolunt</p>
+		<p>Belgae,</p>
+		<p>aliam</p>
+		<p>Aquitani,</p>
+		<p>tertiam</p>
+		<p>qui</p>
+		<p>ipsorum</p>
+		<abl-p class="abso">lingua</abl-p>
+		<p>Celtae,</p>
+		<abl-p class="means">nostra</abl-p>
+		<p>Galli</p>
+		<p>appellantur.</p>
+		<p>Hi</p>
+		<p>omnes</p>
+		<abl-p class="manner">lingua,</abl-p>
+		<abl-p class="twhen">institutis,</abl-p>
+		<abl-p class="sep">legibus</abl-p>
+		<p>inter</p>
+		<p>se</p>
+		<p>differunt.</p>
+		<p>Gallos</p>
+		<p>ab</p>
+		<abl-p class="pwhere">Aquitanis</abl-p>
+		<p>Garumna</p>
+		<p>flumen,</p>
+		<p>a</p>
+		<abl-p class="origin">Belgis</abl-p>
+		<p>Matrona</p>
+		<p>et</p>
+		<p>Sequana</p>
+		<p>dividit.</p>
+		<p>Horum</p>
+		<p>omnium</p>
+		<p>fortissimi</p>
+		<p>sunt</p>
+		<p>Belgae,</p>
+		<p>propterea</p>
+		<p>quod</p>
+		<p>a</p>
+		<abl-p class="agent">cultu</abl-p>
+		<p>atque</p>
+		<abl-p class="compar">humanitate</abl-p>
+		<p>provinciae</p>
+		<p>longissime</p>
+		<p>absunt,</p>
+		<p>minimeque</p>
+		<p>ad</p>
+		<p>eos</p>
+		<p>mercatores</p>
+		<p>saepe</p>
+		<p>commeant</p>
+		<p>atque</p>
+		<p>ea</p>
+		<p>quae</p>
+		<p>ad</p>
+		<p>effeminandos</p>
+		<p>animos</p>
+		<p>pertinent</p>
+		<p>important,</p>
+		<p>proximique</p>
+		<p>sunt</p>
+		<p>Germanis,</p>
+		<p>qui</p>
+		<p>trans</p>
+		<p>Rhenum</p>
+		<p>incolunt,</p>
+		<abl-p class="accomp">quibuscum</abl-p>
+		<p>continenter</p>
+		<p>bellum</p>
+		<p>gerunt.</p>
+		<p>Qua</p>
+		<p>de</p>
+		<p>causa</p>
+		<p>Helvetii</p>
+		<p>quoque</p>
+		<p>reliquos</p>
+		<p>Gallos</p>
+		<abl-p class="cause">virtute</abl-p>
+		<p>praecedunt,</p>
+		<p>quod</p>
+		<p>fere</p>
+		<p>cotidianis</p>
+		<abl-p class="degdif">proeliis</abl-p>
+		<p>cum</p>
+		<abl-p class="descrip">Germanis</abl-p>
+		<p>contendunt,</p>
+		<p>cum</p>
+		<p>aut</p>
+		<p>suis</p>
+		<abl-p class="pwhere">finibus</abl-p>
+		<p>eos</p>
+		<p>prohibent</p>
+		<p>aut</p>
+		<p>ipsi</p>
+		<p>in</p>
+		<p>eorum</p>
+		<abl-p class="resp">finibus</abl-p>
+		<p>bellum</p>
+		<p>gerunt.</p>
+		<p>Eorum</p>
+		<p>una</p>
+		<p>pars,</p>
+		<p>quam</p>
+		<p>Gallos</p>
+		<p>obtinere</p>
+		<p>dictum</p>
+		<p>est,</p>
+		<p>initium</p>
+		<p>capit</p>
+		<p>a</p>
+		<abl-p class="accord">flumine</abl-p>
+		<abl-p class="prep">Rhodano,</abl-p>
+		<p>continetur</p>
+		<abl-p>Garumna</abl-p>
+		<abl-p>flumine,</abl-p>
+		<abl-p>Oceano,</abl-p>
+		<abl-p>finibus</abl-p>
+		<p>Belgarum,</p>
+		<p>attingit</p>
+		<p>etiam</p>
+		<p>ab</p>
+		<abl-p>Sequanis</abl-p>
+		<p>et</p>
+		<abl-p>Helvetiis</abl-p>
+		<p>flumen</p>
+		<p>Rhenum,</p>
+		<p>vergit</p>
+		<p>ad</p>
+		<p>septentriones.</p>
+		<p>Belgae</p>
+		<p>ab</p>
+		<abl-p>extremis</abl-p>
+		<p>Galliae</p>
+		<abl-p>finibus</abl-p>
+		<p>oriuntur,</p>
+		<p>pertinent</p>
+		<p>ad</p>
+		<p>inferiorem</p>
+		<p>partem</p>
+		<p>fluminis</p>
+		<p>Rheni,</p>
+		<p>spectant</p>
+		<p>in</p>
+		<p>septentrionem</p>
+		<p>et</p>
+		<p>orientem</p>
+		<p>solem.</p>
+		<p>Aquitania</p>
+		<p>a</p>
+		<abl-p>Garumna</abl-p>
+		<abl-p>flumine</abl-p>
+		<p>ad</p>
+		<p>Pyrenaeos</p>
+		<p>montes</p>
+		<p>et</p>
+		<p>eam</p>
+		<p>partem</p>
+		<p>Oceani</p>
+		<p>quae</p>
+		<p>est</p>
+		<p>ad</p>
+		<p>Hispaniam</p>
+		<p>pertinet;</p>
+		<p>spectat</p>
+		<p>inter</p>
+		<p>occasum</p>
+		<p>solis</p>
+		<p>et</p>
+		<p>septentriones.</p>
+		</div>
+	</div>
+
+	<button class="accordion">Caesar 1.2</button>
+		<div class="panel">
+			<p> </p>
+		</div>
+
+	<button class="accordion">Caesar 1.3</button>
+		<div class="panel">
+			<p> </p>
+		</div>
+
+	<button class="accordion">Caesar 1.4</button>
+		<div class="panel">
+			<p> </p>
+		</div> 
+	
+	<button class="accordion">Caesar 1.5</button>
+		<div class="panel">
+			<p></p>
+		</div>
+	
+	<button class="accordion">Caesar 1.6</button>
+		<div class="panel">
+			<p> helow</p>
+		</div>
+	
+	<button class="accordion">Caesar 1.7</button>
+		<div class="panel">
+			<p> </p>
+		</div>
+</div>
+	
+<!--Javascript for the accordian buttons -->
+<script>
+	var acc = document.getElementsByClassName("accordion");
+	var i;
+	for (i = 0; i < acc.length; i++) {
+		acc[i].onclick = function(){
+			this.classList.toggle("active"); /* Toggle between adding and removing the "active" class, to highlight the button that controls the panel */
+
+			/* Toggle between hiding and showing the active panel */
+			var panel = this.nextElementSibling;
+				if (panel.style.display === "block") {
+					panel.style.display = "none";
+				} else {
+					panel.style.display = "block";
+				}
+			}
+		}
+</script>
+</Body>
+
+</HTML>

@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<HTML>
+
+<Head>
+	<title> Caesar! </title>
+	<link rel="stylesheet" href="verb_style.css">
+	
+	<!--stylesheet to make circular buttons -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<!-- makes a new type of html tag copying the properties of p -->
+	<script>
+		/*creates a paragraph for verbs so that they can all be changed at once*/
+		var VerbP = document.registerElement('verb-p', {
+			prototype: Object.create(HTMLElement.prototype), extends: 'p'
+		});
+	</script>
+
+<!--function to highlight and unhighlight things-->	
+	<script>
+		/*highlights present*/
+		function presFunction() {
+    		var x = document.getElementById("1.1");
+			var y = x.getElementsByClassName("pres");
+    		var i;
+    		for (i = 0; i < y.length; i++) {
+        		if (y[i].style.backgroundColor == "rgb(255, 230, 255)") {
+					y[i].style.backgroundColor = "gainsboro";
+					} else {
+						y[i].style.backgroundColor = "rgb(255, 230, 255)";
+					}
+				}			
+			}
+		
+		/*highlights imperfect*/
+		function impFunction() {
+			var x = document.getElementById("1.1");
+			var y = x.getElementsByClassName("imp");
+    		var i;
+    		for (i = 0; i < y.length; i++) {
+        		if (y[i].style.backgroundColor == "rgb(255, 204, 255)") {
+					y[i].style.backgroundColor = "gainsboro";
+					} else {
+						y[i].style.backgroundColor = "rgb(255, 204, 255)";
+					}
+				}			
+			}
+		
+		/*highlights future*/
+		function futFunction() {
+			var x = document.getElementById("1.1");
+			var y = x.getElementsByClassName("fut");
+    		var i;
+    		for (i = 0; i < y.length; i++) {
+        		if (y[i].style.backgroundColor == "rgb(255, 179, 255)") {
+					y[i].style.backgroundColor = "gainsboro";
+					} else {
+						y[i].style.backgroundColor = "rgb(255, 179, 255)";
+					}
+				}			
+			}
+		
+		/*highlights perfect*/
+		function perfFunction() {
+			var x = document.getElementById("1.1");
+			var y = x.getElementsByClassName("perf");
+    		var i;
+    		for (i = 0; i < y.length; i++) {
+        		if (y[i].style.backgroundColor == "rgb(255, 179, 230)") {
+					y[i].style.backgroundColor = "gainsboro";
+					} else {
+						y[i].style.backgroundColor = "rgb(255, 179, 230)";
+					}
+				}			
+			}
+		
+		/*highlights pluperfect*/
+		function plupFunction() {
+			var x = document.getElementById("1.1");
+			var y = x.getElementsByClassName("plup");
+    		var i;
+    		for (i = 0; i < y.length; i++) {
+        		if (y[i].style.backgroundColor == "rgb(255, 128, 220)") {
+					y[i].style.backgroundColor = "gainsboro";
+					} else {
+						y[i].style.backgroundColor = "rgb(255, 128, 220)";
+					}
+				}			
+			}
+		
+		/*highlights future perfect*/
+		function fpFunction() {
+			var x = document.getElementById("1.1");
+			var y = x.getElementsByClassName("fp");
+    		var i;
+    		for (i = 0; i < y.length; i++) {
+        		if (y[i].style.backgroundColor == "rgb(255, 50, 220)") {
+					y[i].style.backgroundColor = "gainsboro";
+					} else {
+						y[i].style.backgroundColor = "rgb(255, 50, 220)";
+					}
+				}			
+			}
+		
+		/*highlights indicative*/
+		function indFunction() {
+			var x = document.getElementById("1.1");
+			var y = x.getElementsByClassName("ind");
+    		var i;
+    		for (i = 0; i < y.length; i++) {
+        		if (y[i].style.backgroundColor == "rgb(204, 255, 255)") {
+					y[i].style.backgroundColor = "gainsboro";
+					} else {
+						y[i].style.backgroundColor = "rgb(204, 255, 255)";
+					}
+				}			
+			}
+		
+		/*highlights subjunctive*/
+		function subFunction() {
+			var x = document.getElementById("1.1");
+			var y = x.getElementsByClassName("sub");
+    		var i;
+    		for (i = 0; i < y.length; i++) {
+        		if (y[i].style.backgroundColor == "rgb(128, 229, 255)") {
+					y[i].style.backgroundColor = "gainsboro";
+					} else {
+						y[i].style.backgroundColor = "rgb(128, 229, 255)";
+					}
+				}			
+			}
+		
+		/*highlights actives*/
+		function actFunction() {
+			var x = document.getElementById("1.1");
+			var y = x.getElementsByClassName("act");
+    		var i;
+    		for (i = 0; i < y.length; i++) {
+        		if (y[i].style.backgroundColor == "rgb(204, 255, 221)") {
+					y[i].style.backgroundColor = "gainsboro";
+					} else {
+						y[i].style.backgroundColor = "rgb(204, 255, 221)";
+					}
+				}			
+			}
+		
+		/*highlights passives*/
+		function pasFunction() {
+			var x = document.getElementById("1.1");
+			var y = x.getElementsByClassName("pas");
+    		var i;
+    		for (i = 0; i < y.length; i++) {
+        		if (y[i].style.backgroundColor == "rgb(150, 200, 150)") {
+					y[i].style.backgroundColor = "gainsboro";
+					} else {
+						y[i].style.backgroundColor = "rgb(150, 200, 150)";
+					}
+				}			
+			}
+
+		/*unhighlights verbs*/
+		function clearFunction() {
+			var x = document.getElementById("1.1");
+			var y = x.getElementsByTagName("verb-p");
+    		var i;
+    		for (i = 0; i < y.length; i++) {
+				y[i].style.backgroundColor = "gainsboro";
+				}			
+			}
+	</script>
+</Head>
+
+<Body>	
+<!--the side navigation so that the highlight buttons are always there -->
+<div class="sidenav"><center>
+	<h3> Highlight! </h3>
+	
+	<div class="leaves">
+	<button class= "highlighters" onclick="presFunction(); impFunction(); futFunction(); perfFunction(); plupFunction(); fpFunction();">tense </button>
+	</div>
+	
+	<div class="leaves"> 
+	<button class="highlighters" onclick="indFunction(); subFunction();">mood </button>
+	</div>
+	
+	<div class="leaves"> 
+	<button class="highlighters" onclick="actFunction(); pasFunction();">voice</button>
+	</div>
+	
+	<div class="leaves">
+	<button class="highlighters" type="button" onclick="clearFunction()">clear</button>
+	</div>
+</center></div>
+	
+<!--the actual main content of the website -->
+<div class="main-content" id="1.1">
+	<div><center>
+	<h1> Caesar Something </h1>
+	<h2> The Gallic Wars </h2>
+	<h3> Book 1 </h3>
+	</center></div>
+	
+	<div class="legend"> <center>
+		<h4> Legend </h4>
+		<verb-p class="pres"> Present</verb-p>
+		<verb-p class="imp"> Imperfect</verb-p>
+		<verb-p class="fut"> Future</verb-p>
+		<verb-p class="perf"> Perfect</verb-p>
+		<verb-p class="plup"> Pluperfect</verb-p>
+		<verb-p class="fp"> Future Perfect</verb-p>
+		<br>
+		<verb-p class="ind"> Indicative</verb-p>
+		<verb-p class ="sub"> Subjunctive</verb-p>
+		<br>
+		<verb-p class="act"> Active</verb-p>
+		<verb-p class="pas"> Passive</verb-p>
+		
+	</center></div>
+		
+	<button class="accordion"> Caesar 1.1 </button>
+	<div class="panel">
+		<div>
+			<verb-p class="pres ind">Gallia</verb-p>
+			<verb-p class="imp sub">est</verb-p>
+			<verb-p class="fut act">omnis</verb-p>
+			<verb-p class="perf pas">divisa</verb-p>
+			<verb-p class="plup">in</verb-p>
+			<verb-p class="fp">partes</verb-p>
+			<verb-p class="ind">tres,</verb-p>
+			<verb-p class="sub">quarum</verb-p>
+			<verb-p class="act">unam</verb-p>
+			<verb-p class="pas">incolunt</verb-p>
+			<p>Belgae,</p>
+			<p>aliam</p>
+			<p>Aquitani,</p>
+			<p>tertiam</p>
+			<p>qui</p>
+			<p>ipsorum</p>
+			<p>lingua</p>
+			<p>Celtae,</p>
+			<p>nostra</p>
+			<p>Galli</p>
+			<p>appellantur.</p>
+			<p>2</p>
+			<p>Hi</p>
+			<p>omnes</p>
+			<p>lingua,</p>
+			<p>institutis,</p>
+			<p>legibus</p>
+			<p>inter</p>
+			<p>se</p>
+			<p>differunt.</p>
+			<p>Gallos</p>
+			<p>ab</p>
+			<p>Aquitanis</p>
+			<p>Garumna</p>
+			<p>flumen,</p>
+			<p>a</p>
+			<p>Belgis</p>
+			<p>Matrona</p>
+			<p>et</p>
+			<p>Sequana</p>
+			<p>dividit.</p>
+			<p>3</p>
+			<p>Horum</p>
+			<p>omnium</p>
+			<p>fortissimi</p>
+			<p>sunt</p>
+			<p>Belgae,</p>
+			<p>propterea</p>
+			<p>quod</p>
+			<p>a</p>
+			<p>cultu</p>
+			<p>atque</p>
+			<p>humanitate</p>
+			<p>provinciae</p>
+			<p>longissime</p>
+			<p>absunt,</p>
+			<p>minimeque</p>
+			<p>ad</p>
+			<p>eos</p>
+			<p>mercatores</p>
+			<p>saepe</p>
+			<p>commeant</p>
+			<p>atque</p>
+			<p>ea</p>
+			<p>quae</p>
+			<p>ad</p>
+			<p>effeminandos</p>
+			<p>animos</p>
+			<p>pertinent</p>
+			<p>important,</p>
+			<p>4</p>
+			<p>proximique</p>
+			<p>sunt</p>
+			<p>Germanis,</p>
+			<p>qui</p>
+			<p>trans</p>
+			<p>Rhenum</p>
+			<p>incolunt,</p>
+			<p>quibuscum</p>
+			<p>continenter</p>
+			<p>bellum</p>
+			<p>gerunt.</p>
+			<p>Qua</p>
+			<p>de</p>
+			<p>causa</p>
+			<p>Helvetii</p>
+			<p>quoque</p>
+			<p>reliquos</p>
+			<p>Gallos</p>
+			<p>virtute</p>
+			<p>praecedunt,</p>
+			<p>quod</p>
+			<p>fere</p>
+			<p>cotidianis</p>
+			<p>proeliis</p>
+			<p>cum</p>
+			<p>Germanis</p>
+			<p>contendunt,</p>
+			<p>cum</p>
+			<p>aut</p>
+			<p>suis</p>
+			<p>finibus</p>
+			<p>eos</p>
+			<p>prohibent</p>
+			<p>aut</p>
+			<p>ipsi</p>
+			<p>in</p>
+			<p>eorum</p>
+			<p>finibus</p>
+			<p>bellum</p>
+			<p>gerunt.</p>
+			<p>5</p>
+			<p>Eorum</p>
+			<p>una</p>
+			<p>pars,</p>
+			<p>quam</p>
+			<p>Gallos</p>
+			<p>obtinere</p>
+			<p>dictum</p>
+			<p>est,</p>
+			<p>initium</p>
+			<p>capit</p>
+			<p>a</p>
+			<p>flumine</p>
+			<p>Rhodano,</p>
+			<p>continetur</p>
+			<p>Garumna</p>
+			<p>flumine,</p>
+			<p>Oceano,</p>
+			<p>finibus</p>
+			<p>Belgarum,</p>
+			<p>attingit</p>
+			<p>etiam</p>
+			<p>ab</p>
+			<p>Sequanis</p>
+			<p>et</p>
+			<p>Helvetiis</p>
+			<p>flumen</p>
+			<p>Rhenum,</p>
+			<p>vergit</p>
+			<p>ad</p>
+			<p>septentriones.</p>
+			<p>6</p>
+			<p>Belgae</p>
+			<p>ab</p>
+			<p>extremis</p>
+			<p>Galliae</p>
+			<p>finibus</p>
+			<p>oriuntur,</p>
+			<p>pertinent</p>
+			<p>ad</p>
+			<p>inferiorem</p>
+			<p>partem</p>
+			<p>fluminis</p>
+			<p>Rheni,</p>
+			<p>spectant</p>
+			<p>in</p>
+			<p>septentrionem</p>
+			<p>et</p>
+			<p>orientem</p>
+			<p>solem.</p>
+			<p>7</p>
+			<p>Aquitania</p>
+			<p>a</p>
+			<p>Garumna</p>
+			<p>flumine</p>
+			<p>ad</p>
+			<p>Pyrenaeos</p>
+			<p>montes</p>
+			<p>et</p>
+			<p>eam</p>
+			<p>partem</p>
+			<p>Oceani</p>
+			<p>quae</p>
+			<p>est</p>
+			<p>ad</p>
+			<p>Hispaniam</p>
+			<p>pertinet;</p>
+			<p>spectat</p>
+			<p>inter</p>
+			<p>occasum</p>
+			<p>solis</p>
+			<p>et</p>
+			<p>septentriones.</p>
+		</div>
+	</div>
+</div>
+	
+<!--Javascript for the accordian buttons -->
+<script>
+		var acc = document.getElementsByClassName("accordion");
+		var i;
+
+		for (i = 0; i < acc.length; i++) {
+			acc[i].onclick = function(){
+				/* Toggle between adding and removing the "active" class, to highlight the button that controls the panel */
+				this.classList.toggle("active");
+
+				/* Toggle between hiding and showing the active panel */
+				var panel = this.nextElementSibling;
+				if (panel.style.display === "block") {
+					panel.style.display = "none";
+				} else {
+					panel.style.display = "block";
+				}
+			}
+		}
+	</script>
+	
+</Body>
+
+</HTML>

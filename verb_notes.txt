@@ -1,0 +1,75 @@
+verbs
+tense
+	present - pink background - pres
+	imperfect - orange background - imp
+	future - yellow background - fut
+	perfect - green background - perf
+ 	pluperfect - blue packground - plup
+	future perfect - purple background - fp
+mood
+	indicative - bold - ind
+	subjuctive - italics - sub
+voice
+	active - all uppercase - act
+	passive - all lowercase - pas
+number
+	singular - lighten background - s
+	plural - darken background - p
+person
+	1st - one underline - one
+	2nd - two underline - two
+	3rd - three underline -three
+some have gender 
+	f -dark pink text - f 
+	m - dark blue text - m
+	n - brown text - n
+some have case
+	nom - pink text shadow - nom
+	gen - orange text shadow - gen
+	dat - yellow text shadow - dat
+	acc - green text shadow -acc 
+	abl - blue text shadow- abl
+
+notes: all of these are classes
+backgrounds are light
+shadows are dark
+
+change
+only change packground colors
+have button for each of the topics
+words change based on what they are based on the button
+this would make seeing easier
+need a legend
+different colors but slight difference for each
+tense - pinks
+	present - rgb(255, 230, 255) #ffe6ff background - pres
+	imperfect - rgb(255, 204, 255) #ffccff background - imp
+	future - rgb(255, 179, 255) #ffb3ff background - fut
+	perfect - rgb(255, 179, 230) #ffb3e6 background - perf
+ 	pluperfect - rgb(255, 128, 213) #ff80d5 packground - plup
+	future perfect - #ff66cc rgb(255, 102, 204) background - fp
+mood - blues
+	indicative - #ccffff rgb(204, 255, 255) - ind
+	subjuctive - #80e5ff rgb(128, 229, 255) - sub
+voice - greens
+	active - #ccffdd rgb(204, 255, 221) - act
+	passive - #79d2a6 rgb(121, 210, 166) - pas
+number - purple
+	singular -  background - s
+	plural -  background - p
+person - 
+	1st -  - one
+	2nd -  - two
+	3rd -  -three
+some have gender 
+	f -dark pink text - f 
+	m - dark blue text - m
+	n - brown text - n
+some have case
+	nom - pink text shadow - nom
+	gen - orange text shadow - gen
+	dat - yellow text shadow - dat
+	acc - green text shadow -acc 
+	abl - blue text shadow- abl
+
+	
